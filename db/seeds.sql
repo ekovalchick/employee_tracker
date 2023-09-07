@@ -1,4 +1,4 @@
-USE employee_db;
+USE employees_db;
 -- need "use" to open table data base
 
 INSERT INTO department (name)
@@ -26,6 +26,11 @@ VALUES ("John","Doe",1),
        ("Malia","Brown",6),
        ("Sarah","Lourd",7),
        ("Tom","Allen",8);
+
+UPDATE employee SET manager_id = 1 WHERE id= 2;
+UPDATE employee SET manager_id = 3 WHERE id= 4;
+UPDATE employee SET manager_id = 5 WHERE id= 6;
+UPDATE employee SET manager_id = 7 WHERE id= 8;
 
        
 
