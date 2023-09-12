@@ -171,8 +171,18 @@ function addDepartment(){
     }
 
     function addRole(){
-        db.query("SELECT role.id, title, salary,name as department from role LEFT JOIN department on department.id= role.department_id", (err,roleData)=>{
-    
+        db.query("SELECT * FROM department", (err,deptData)=>{
+   
+            var deptChoices = []
+            for (let i = 0; i < deptData.length; i++) {
+                var currentChoice = {
+                    name: deptData[i].name,
+                    value: deptData[i].id,
+
+                }
+                deptChoices.push(currentChoice)
+                
+            }
                 inquirer.prompt([
                     {
                         type: "input",
@@ -184,10 +194,17 @@ function addDepartment(){
                         message: "What is the Role salary?",
                         name: "salary",
                     },
+                    {
+                        type: "list",
+                        message: "What Department does this role belong to?",
+                        name: "department_id",
+                        choices: deptChoices
+                    },
 
                 ])
                 .then(answer=>{
-                    db.query("INSERT INTO role (title,salary) VALUES (?,?)", [answer.title,answer.salary],
+                    console.log(answer.department_id)
+                    db.query("INSERT INTO role (title,salary,department_id) VALUES (?,?,?)", [answer.title,answer.salary,answer.department_id],
                     err=> {
                         viewRoles()
                     })
