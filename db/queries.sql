@@ -8,3 +8,4 @@ SELECT employee.id, employee.first_name, employee.last_name, title, name as depa
 left join role on employee.role_id = role.id
 left join department on department.id = role.department_id
 left join employee as bosses on employee.manager_id = bosses.id;
+

@@ -43,7 +43,7 @@ Watch video below for directions and app use:
   ## Tests
   
   1. npm i (integrated terminal)
-2. npm start (integrated terminal)
+2. node index.js
 3. choose option from what would you like to do prompt
 4. add or view different information from the selected prompt
 
