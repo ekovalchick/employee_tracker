@@ -8,6 +8,7 @@
 The user will download the necessary programs, and run npm start and the terminal will give the user specific prompts and update or view information the user selects.
 
 Watch video below for directions and app use:
+https://drive.google.com/file/d/1S5ybZMoRqBm0LqoOfQhsyhR3NbvFKWex/view
   
   ## Table of Contents (Optional)
   
